@@ -1,0 +1,206 @@
+package n3exercici1;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class N3Exercici1 {
+
+	public static void main(String[] args) {
+		ArrayList<Redactor> redactors = new ArrayList<Redactor>();
+		boolean sortir = false;
+		
+		redactors.add(new Redactor("Daniel", "Cavero", "37134022Z"));
+		redactors.get(0).agregarNoticia(new NoticiaFutbol("El Barça guanya el Gamper 2022.",
+				"Gamper", "Barça", "Ferran Torres"));
+		redactors.get(0).getNoticies().get(0).setText("Superpartit, debut espectacular de Lewandowski."
+				+ " Finalitza el partir contra els mexicans amb resultat 6-0.");
+		redactors.get(0).agregarNoticia(new NoticiaFutbol("Comença la LLiga Santander 2022.",
+				"Lliga", "Barça", "Ansu Fati"));
+		redactors.get(0).getNoticies().get(1).setText("Partit aburrit del Barça i nova lesió d'Ansu Fati, "
+				+ "que no podrà tornar a jugar fins el 2023.");
+		redactors.get(0).agregarNoticia(new NoticiaBasket("Comença la LLiga ACB 2022.",
+				"ACB", "Barça"));
+		redactors.get(0).getNoticies().get(2).setText("Partit trepidant que demostra l'enorme potencial "
+				+ "del Barça aquesta temporada. Estarem entretinguts, compreu crispetes.");
+		NoticiaTenis noticiaTenis1 = new NoticiaTenis ("Partir de Tenis etern.");
+		noticiaTenis1.agregarTenistes("Federer"); noticiaTenis1.agregarTenistes("Rasputin");
+		redactors.get(0).agregarNoticia(noticiaTenis1);
+		redactors.get(0).getNoticies().get(3).setText("Partit de tenis interminable y aburrit, perfecte "
+				+ "per la migdiada de dissabte.");
+		redactors.get(0).agregarNoticia(new NoticiaF1("Carrera Épica.", "Ferrari"));
+		redactors.get(0).getNoticies().get(4).setText("Sortint des de l'última posició, avança tota la resta"
+				+ " de pilots i el campió acaba primer");
+		redactors.get(0).agregarNoticia(new NoticiaMotociclisme("Carrera passada per aigua.", "Yamaha"));	
+		redactors.get(0).getNoticies().get(5).setText("Se suspen la cursa a la tercera volta per "
+				+ "pluja torrencial. Quin gran llàstima, prometia molt.");		
+		
+		
+		redactors.add(new Redactor("Núria", "Cereza", "38145027V"));
+		redactors.get(1).agregarNoticia(new NoticiaFutbol("El Madrid debuta a Europa.",
+				"Lliga de Campions", "Madrid", "Benzema"));
+		redactors.get(1).getNoticies().get(0).setText("El Madrid perd merescudament en el seu debut"
+				+ " a la Lliga de Campions contra un equip molt inferior.");
+		redactors.get(1).agregarNoticia(new NoticiaBasket("Comença l'Eurolliga 2022.",
+				"Eurolliga", "Madrid"));
+		redactors.get(1).getNoticies().get(1).setText("El Madrid perd per pallissa un partit trepidant que 10" +
+				" minuts abans del final quanyava de 26 punts.");
+		NoticiaTenis noticiaTenis2 = new NoticiaTenis ("Partir de Tenis per la via ràpida.");
+		noticiaTenis2.agregarTenistes("Nadal"); noticiaTenis2.agregarTenistes("Alcaraz");
+		redactors.get(1).agregarNoticia(noticiaTenis2);
+		redactors.get(1).getNoticies().get(2).setText("Alcaraz apallissa Nadal molt merescudament i dedica la "
+				+ "seva victòria al seu avi de 87 anys, que encara juga al tenis cada matí.");
+		redactors.get(1).agregarNoticia(new NoticiaF1("Carrera aburrida.", "Mercedes"));
+		redactors.get(1).getNoticies().get(3).setText("Cursa soporífera que guanya Mercedes per mèrit dels"
+				+ " altres equips que no aconsegueixen ni un sol avançament.");
+		redactors.get(1).agregarNoticia(new NoticiaMotociclisme("Carrera sota el Sol d'Abu Dahbi.", "Honda"));		
+		redactors.get(1).getNoticies().get(4).setText("Cursa molt ràpida que guanya Marques després de tornar"
+				+ " de la seva baixa per lesió després de 12 mesos sense còrrer");
+		
+		System.out.println(redactors);
+		
+		do {
+			switch (menu()) {
+			case (1):
+				introduirRedactor(redactors);
+				break;
+			case (2):
+				eliminarRedactor();
+				break;
+			case(3):
+				introduirNoticia();
+				break;
+			case(4):
+				eliminarNoticia();
+				break;
+			case (5):
+				mostrarNoticies();
+				break;
+			case (6):
+				mostrarTot();
+				break;
+			case(7):
+				calcularPuntuacio();
+				break;
+			case(8):
+				calcularPreu();
+				break;
+			case(0):
+				sortir = true;
+				System.out.println("\nHas sortit de l'Aplicació.");
+				break;
+			}
+		} while (!sortir);
+		
+	}
+
+
+	public static int menu() {
+		int opcio;
+		final int MINIM = 0;
+		final int MAXIM = 8;
+		Scanner sc = new Scanner(System.in);
+
+		do {
+			System.out.println("\nOpcions de l'Aplicació:\n");
+			System.out.println("1. Introducir redactor.");
+			System.out.println("2. Eliminar redactor.");
+			System.out.println("3. Introduir noticia.");
+			System.out.println("4. Eliminar notícia.");
+			System.out.println("5. Mostrar notícies d'un redactor.");
+			System.out.println("6. Mostrar totes les notícies per redactor.");
+			System.out.println("7. Calcular la puntuació d'una notícia.");
+			System.out.println("8. Calcular el preu d'una notícia.");
+			System.out.println("0. Sortir de l'aplicació.");
+			opcio = sc.nextInt();
+			if (opcio < MINIM || opcio > MAXIM)
+				System.out.println("L'opció triada no és correcte.\n");
+		} while (opcio < MINIM || opcio > MAXIM);
+
+		return opcio;
+	}
+	
+	private static Redactor buscarRedactor(ArrayList<Redactor> redactors, String nom, String cognom) {
+		Redactor redactor = null;
+		boolean trobat = false;
+		int last = redactors.size(), i = 0;
+		
+		while (!trobat && i < last) {
+			if (redactors.get(i).getNom().equalsIgnoreCase(nom) &&
+					redactors.get(i).getCognom().equalsIgnoreCase(cognom)) {
+					trobat = true;
+					redactor = redactors.get(i);
+			}
+			i +=1;
+		}
+		return redactor;
+	}
+	
+	private static Noticia buscarNoticia(ArrayList<Noticia> noticies, String titular) {
+		Noticia noticia = null;
+		
+		return noticia;
+	}
+	
+	private static void introduirRedactor(ArrayList<Redactor> redactors) {
+		String nom, cognom, dni;
+		Redactor busqueda;
+		Scanner sc = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("#,###.00");
+		
+		System.out.println("\nIntroducció d'un Nou Redactor.");
+		System.out.println("Escriu el nom del nou Redactor:");
+		nom = sc.nextLine();
+		System.out.println("Escriu el cognom del nou Redactor:");
+		cognom = sc.nextLine();
+		busqueda = buscarRedactor(redactors, nom, cognom);
+		if (busqueda == null) {
+			System.out.println("Escriu el DNI del nou Redactor:");
+			dni = sc.nextLine();
+			redactors.add(new Redactor(nom, cognom, dni));
+			System.out.println("Afegit un nou Redactor:");
+			int last = redactors.size()-1;
+			System.out.println(redactors.get(last));
+		} else {
+			System.out.println("\nAquest redactor ja existeix!");
+			System.out.println(busqueda.getNom() + " " + busqueda.getCognom() + ":");
+			System.out.println("DNI " + busqueda.getDni() + ", Sou " + df.format(Redactor.getSou()) + " EUR.");
+		}
+	}
+	
+	private static void eliminarRedactor() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void introduirNoticia() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private static void eliminarNoticia() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private static void mostrarNoticies() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private static void mostrarTot() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private static void calcularPreu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void calcularPuntuacio() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

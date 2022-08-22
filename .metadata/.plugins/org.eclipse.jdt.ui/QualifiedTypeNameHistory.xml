@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="m8_exercici4.Edifici"/>
+    <fullyQualifiedTypeName name="m8_exercici4.herencia.Hotel"/>
+    <fullyQualifiedTypeName name="m8_exercici4.herencia.Hospital"/>
+    <fullyQualifiedTypeName name="m8_exercici4.herencia.Cinema"/>
+    <fullyQualifiedTypeName name="m8_exercici4.herencia.Edifici"/>
+    <fullyQualifiedTypeName name="m8_exercici6.herencia.Pilot"/>
+    <fullyQualifiedTypeName name="m8_exercici6.herencia.Mecànic"/>
+    <fullyQualifiedTypeName name="m8_exercici6.herencia.Treballador"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

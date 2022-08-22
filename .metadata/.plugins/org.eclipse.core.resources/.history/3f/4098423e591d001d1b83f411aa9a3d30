@@ -1,0 +1,56 @@
+package n3exercici1;
+
+public class NoticiaMotociclisme extends Noticia {
+	private String equip;
+	
+	public NoticiaMotociclisme(String titular, String equip) {
+		super(titular);
+		this.equip = equip;
+	}
+
+	public String getEquip() {
+		return equip;
+	}
+	public void setEquip(String equip) {
+		this.equip = equip;
+	}
+	
+	@Override
+	public int calcularPreuNoticia() {
+		int preuNoticia;
+		final int PREUINICIAL = 100;
+		final int PREUEQUIPIMPORTANT = 50;
+		final String EQUIPIMPORTANT1 = "Honda";
+		final String EQUIPIMPORTANT2 = "Yamaha";
+		
+		preuNoticia = PREUINICIAL;
+		if (this.equip.equalsIgnoreCase(EQUIPIMPORTANT1) ||
+				this.equip.equalsIgnoreCase(EQUIPIMPORTANT2))
+			preuNoticia += PREUEQUIPIMPORTANT;	
+	
+		return preuNoticia;
+	}
+	
+	@Override
+	public int calcularPuntuacioNoticia() {
+		int puntuacioNoticia;
+		final int PUNTUACIOINICIAL = 3;
+		final int PUNTUACIOEQUIPIMPORTANT = 3;
+		final String EQUIPIMPORTANT1 = "Honda";
+		final String EQUIPIMPORTANT2 = "Yamaha";
+		
+		puntuacioNoticia = PUNTUACIOINICIAL;
+		if (this.equip.equalsIgnoreCase(EQUIPIMPORTANT1) ||
+				this.equip.equalsIgnoreCase(EQUIPIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOEQUIPIMPORTANT;	
+	
+		return puntuacioNoticia;
+	}
+
+	@Override
+	public String toString() {
+		return "Noticia de Motociclisme: " + "\nTitular = " + super.titular + "\nText = " + super.text
+				+ ".\nEquip = " + this.equip + ".";
+	}
+
+}

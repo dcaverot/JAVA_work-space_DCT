@@ -1,0 +1,93 @@
+package n3exercici1;
+
+public class NoticiaFutbol extends Noticia {
+	private String competicio;
+	private String club;
+	private String jugador;
+	
+	public NoticiaFutbol(String titular, String competicio, String club, String jugador) {
+		super(titular);
+		this.competicio = competicio;
+		this.club = club;
+		this.jugador = jugador;
+	}
+
+	public String getCompeticio() {
+		return competicio;
+	}
+	public void setCompeticio(String competicio) {
+		this.competicio = competicio;
+	}
+	public String getClub() {
+		return club;
+	}
+	public void setClub(String club) {
+		this.club = club;
+	}
+	public String getJugador() {
+		return jugador;
+	}
+	public void setJugador(String jugador) {
+		this.jugador = jugador;
+	}
+	
+	@Override
+	public int calcularPreuNoticia() {
+		int preuNoticia;
+		final int PREUINICIAL = 300;
+		final int PREUCOMPETICIOIMPORTANT = 100;
+		final int PREUEQUIPIMPORTANT = 100;
+		final int PREUJUGADORIMPORTANT = 50;
+		final String COMPETICIOIMPORTANT = "Lliga de Campions";
+		final String EQUIPIMPORTANT1 = "Barça";
+		final String EQUIPIMPORTANT2 = "Madrid";
+		final String JUGADORIMPORTANT1 = "Ferran Torres";
+		final String JUGADORIMPORTANT2 = "Benzema";
+		
+		preuNoticia = PREUINICIAL;
+		if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT))
+			preuNoticia += PREUCOMPETICIOIMPORTANT;
+		if (this.club.equalsIgnoreCase(EQUIPIMPORTANT1) || this.club.equalsIgnoreCase(EQUIPIMPORTANT2))
+			preuNoticia += PREUEQUIPIMPORTANT;	
+		if (this.jugador.equalsIgnoreCase(JUGADORIMPORTANT1) || this.jugador.equalsIgnoreCase(JUGADORIMPORTANT2))
+			preuNoticia += PREUJUGADORIMPORTANT;
+		
+		return preuNoticia;
+	}
+	
+	@Override
+	public int calcularPuntuacioNoticia() {
+		int puntuacioNoticia;
+		final int PUNTUACIOINICIAL = 5;
+		final int PUNTUACIOCOMPETICIOIMPORTANT1 = 3;
+		final int PUNTUACIOCOMPETICIOIMPORTANT2 = 2;
+		final int PUNTUACIOEQUIPIMPORTANT = 1;
+		final int PUNTUACIOJUGADORIMPORTANT = 1;
+		final String COMPETICIOIMPORTANT1 = "Lliga de Campions";
+		final String COMPETICIOIMPORTANT2 = "Lliga";
+		final String EQUIPIMPORTANT1 = "Barça";
+		final String EQUIPIMPORTANT2 = "Madrid";
+		final String JUGADORIMPORTANT1 = "Ferran Torres";
+		final String JUGADORIMPORTANT2 = "Benzema";
+		
+		puntuacioNoticia = PUNTUACIOINICIAL;
+		if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT1))
+			puntuacioNoticia += PUNTUACIOCOMPETICIOIMPORTANT1;
+		else if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOCOMPETICIOIMPORTANT2;
+		if (this.club.equalsIgnoreCase(EQUIPIMPORTANT1) || this.club.equalsIgnoreCase(EQUIPIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOEQUIPIMPORTANT;	
+		if (this.jugador.equalsIgnoreCase(JUGADORIMPORTANT1) || this.jugador.equalsIgnoreCase(JUGADORIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOJUGADORIMPORTANT;		
+			
+		return puntuacioNoticia;
+	}
+
+	@Override
+	public String toString() {
+		return "Noticia de Futbol: " + "\nTitular = " + super.titular + "\nText = " + super.text
+				+ ".\nCompetició = " + this.competicio + "\nClub = " + this.club + "\nJugador = "
+				+ this.jugador + ".";
+	}
+
+}

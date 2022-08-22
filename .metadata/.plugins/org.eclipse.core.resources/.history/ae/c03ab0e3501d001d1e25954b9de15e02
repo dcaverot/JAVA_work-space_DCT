@@ -1,0 +1,73 @@
+package n3exercici1;
+
+import java.util.ArrayList;
+
+public class NoticiaTenis extends Noticia {
+	private ArrayList<String> tenistes = new ArrayList<String>();
+	
+	public NoticiaTenis(String titular) {
+		super(titular);
+	}
+
+	public ArrayList<String> getTenistes() {
+		return tenistes;
+	}
+	public void agregarTenistes(String tenista){
+		tenistes.add(tenista);
+	}
+
+	@Override
+	public int calcularPreuNoticia() {
+		int preuNoticia;
+		final int PREUINICIAL = 150;
+		final int PREUJUGADORIMPORTANT = 100;
+		final String JUGADORIMPORTANT1 = "Federer";
+		final String JUGADORIMPORTANT2 = "Nadal";
+		final String JUGADORIMPORTANT3 = "Djokovic";
+		int last = tenistes.size(), i = 0;
+		boolean trobat = false;
+		
+		preuNoticia = PREUINICIAL;
+		while (!trobat && i<last) {
+			if (this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT1) ||
+				this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT2) ||
+				this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT3)) {
+				preuNoticia += PREUJUGADORIMPORTANT;	
+				trobat = true;
+				i +=1;
+			}
+		}
+		return preuNoticia;
+	}
+	
+	@Override
+	public int calcularPuntuacioNoticia() {
+		int puntuacioNoticia;
+		final int PUNTUACIOINICIAL = 4;
+		final int PUNTUACIOJUGADORIMPORTANT = 3;
+		final String JUGADORIMPORTANT1 = "Federer";
+		final String JUGADORIMPORTANT2 = "Nadal";
+		final String JUGADORIMPORTANT3 = "Djokovic";
+		int last = tenistes.size(), i = 0;
+		boolean trobat = false;
+		
+		puntuacioNoticia = PUNTUACIOINICIAL;
+		while (!trobat && i<last) {
+			if (this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT1) ||
+				this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT2) ||
+				this.tenistes.get(i).equalsIgnoreCase(JUGADORIMPORTANT3)) {
+				puntuacioNoticia += PUNTUACIOJUGADORIMPORTANT;	
+				trobat = true;
+				i +=1;
+			}
+		}
+		return puntuacioNoticia;
+	}
+	
+	@Override
+	public String toString() {
+		return "Noticia de Tenis: " + "\nTitular = " + super.titular + "\nText = " + super.text
+				+ ".\nCompetició = " + this.competicio + "\nTenistes = " + this.tenistes + ".";
+	}
+
+}

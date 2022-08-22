@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="veureNoticiaFutbol"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="veureNoticiaFutbol"/>
+			<item value="introduirNoticiaFutbol"/>
+			<item value="instance"/>
+			<item value="ÃÂÃÂ "/>
+			<item value="ÃÂ¢ÃÂÃÂ"/>
+			<item value="ÃÂÃÂ­"/>
+			<item value="ÃÂ¢ÃÂÃÂ¬"/>
+			<item value="alÃ§ada"/>
+			<item value="MecÃ nic"/>
+			<item value="velocitatMÃ x"/>
+			<item value="potÃ¨ncia"/>
+			<item value="euros"/>
+			<item value="opcio"/>
+			<item value="posicionClienteCuenta"/>
+			<item value="posicion"/>
+		</list>
+		<list key="replacehistory">
+			<item value="à"/>
+			<item value="&apos;"/>
+			<item value="í"/>
+			<item value="EUR"/>
+			<item value="alçada"/>
+			<item value="Mecànic"/>
+			<item value="velocitatMax"/>
+			<item value="potencia"/>
+			<item value="arrayNumeros"/>
+			<item value="opció"/>
+			<item value="posicionCuenta"/>
+			<item value="posicionCliente"/>
+			<item value="Cuentas"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="176"/>
+		<item key="DIALOG_Y_ORIGIN" value="220"/>
+		<item key="DIALOG_WIDTH" value="511"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

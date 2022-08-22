@@ -1,0 +1,60 @@
+package n3exercici1;
+
+public class NoticiaF1 extends Noticia {
+	private String escuderia;
+	
+	public NoticiaF1(String titular, String escuderia) {
+		super(titular);
+		this.escuderia = escuderia;
+	}
+
+	public String getEscuderia() {
+		return escuderia;
+	}
+	public void setEscuderia(String escuderia) {
+		this.escuderia = escuderia;
+	}
+
+	@Override
+	public int calcularPreuNoticia() {
+		int preuNoticia;
+		final int PREUINICIAL = 100;
+		final int PREUESCUDERIAIMPORTANT = 50;
+		final String ESCUDERIAIMPORTANT1 = "Ferrari";
+		final String ESCUDERIAIMPORTANT2 = "Mercedes";
+		
+		preuNoticia = PREUINICIAL;
+		if (this.escuderia.equalsIgnoreCase(ESCUDERIAIMPORTANT1) ||
+				this.escuderia.equalsIgnoreCase(ESCUDERIAIMPORTANT2))
+			preuNoticia += PREUESCUDERIAIMPORTANT;	
+	
+		return preuNoticia;
+	}
+
+	@Override
+	public int calcularPuntuacioNoticia() {
+		int puntuacioNoticia;
+		final int PUNTUACIOINICIAL = 4;
+		final int PUNTUACIOESCUDERIAIMPORTANT = 2;
+		final String ESCUDERIAIMPORTANT1 = "Ferrari";
+		final String ESCUDERIAIMPORTANT2 = "Mercedes";
+		
+		puntuacioNoticia = PUNTUACIOINICIAL;
+		if (this.escuderia.equalsIgnoreCase(ESCUDERIAIMPORTANT1) ||
+				this.escuderia.equalsIgnoreCase(ESCUDERIAIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOESCUDERIAIMPORTANT;	
+	
+		return puntuacioNoticia;
+	}
+	
+	@Override
+	public String toString() {
+		return "Noticia de F1: " + "\nTitular = " + super.titular + "\nText = " + super.text 
+				+ ".\nEscuderia = " + this.escuderia + ".";
+	}
+	
+	
+	
+	
+
+}

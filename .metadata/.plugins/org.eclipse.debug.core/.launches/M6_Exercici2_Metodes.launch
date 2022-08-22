@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/M6_Exercici2_Metodes/src/m6_exercici2_metodes/M6_Exercici2_Metodes.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="m6_exercici2_metodes.M6_Exercici2_Metodes"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="M6_Exercici2_Metodes"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="M6_Exercici2_Metodes"/>
+</launchConfiguration>

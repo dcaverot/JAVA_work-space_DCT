@@ -1,0 +1,54 @@
+package n3exercici1;
+
+import java.util.ArrayList;
+
+public class Redactor {
+	private String nom;
+	private String cognom;
+	private String dni;
+	private static int sou = 1500;
+	private ArrayList<Noticia> noticies;
+	
+	public Redactor(String nom, String cognom, String dni) {
+		this.nom = nom;
+		this.cognom = cognom;
+		this.dni = dni;
+		this.noticies = new ArrayList<Noticia>();
+	}
+
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getCognom() {
+		return cognom;
+	}
+	public void setCognom(String cognom) {
+		this.cognom = cognom;
+	}
+	public String getDni() {
+		return dni;
+	}
+	public static int getSou() {
+		return sou;
+	}
+	public void setSou(int sou) {
+		Redactor.sou = sou;
+	}
+	public ArrayList<Noticia> getNoticies() {
+		return noticies;
+	}
+	public void agregarNoticia(Noticia noticia){
+		noticies.add(noticia);
+	}
+		
+	@Override
+	public String toString() {
+		return "Redactor: nom = " + nom + " " + cognom + ", DNI = " + dni + " Sou = " + sou + "EUR."
+				+ "\nNoticies:\n" + noticies;
+	}	
+	
+	
+}

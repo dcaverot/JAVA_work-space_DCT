@@ -1,0 +1,74 @@
+package n3exercici1;
+
+public class NoticiaBasket extends Noticia {
+	private String competicio;
+	private String club;
+	
+	public NoticiaBasket(String titular, String competicio, String club) {
+		super(titular);
+		this.competicio = competicio;
+		this.club = club;
+	}
+
+	public String getCompeticio() {
+		return competicio;
+	}
+	public void setCompeticio(String competicio) {
+		this.competicio = competicio;
+	}
+	public String getClub() {
+		return club;
+	}
+	public void setClub(String club) {
+		this.club = club;
+	}
+
+	@Override
+	public int calcularPreuNoticia() {
+		int preuNoticia;
+		final int PREUINICIAL = 250;
+		final int PREUCOMPETICIOIMPORTANT = 75;
+		final int PREUEQUIPIMPORTANT = 75;
+		final String COMPETICIOIMPORTANT = "Eurolliga";
+		final String EQUIPIMPORTANT1 = "Barça";
+		final String EQUIPIMPORTANT2 = "Madrid";
+		
+		preuNoticia = PREUINICIAL;
+		if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT))
+			preuNoticia += PREUCOMPETICIOIMPORTANT;
+		if (this.club.equalsIgnoreCase(EQUIPIMPORTANT1) || this.club.equalsIgnoreCase(EQUIPIMPORTANT2))
+			preuNoticia += PREUEQUIPIMPORTANT;	
+	
+		return preuNoticia;
+	}
+	
+	@Override
+	public int calcularPuntuacioNoticia() {
+		int puntuacioNoticia;
+		final int PUNTUACIOINICIAL = 4;
+		final int PUNTUACIOCOMPETICIOIMPORTANT1 = 3;
+		final int PUNTUACIOCOMPETICIOIMPORTANT2 = 2;
+		final int PUNTUACIOEQUIPIMPORTANT = 1;
+		final String COMPETICIOIMPORTANT1 = "Eurolliga";
+		final String COMPETICIOIMPORTANT2 = "ACB";
+		final String EQUIPIMPORTANT1 = "Barça";
+		final String EQUIPIMPORTANT2 = "Madrid";
+		
+		puntuacioNoticia = PUNTUACIOINICIAL;
+		if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT1))
+			puntuacioNoticia += PUNTUACIOCOMPETICIOIMPORTANT1;
+		else if (this.competicio.equalsIgnoreCase(COMPETICIOIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOCOMPETICIOIMPORTANT2;
+		if (this.club.equalsIgnoreCase(EQUIPIMPORTANT1) || this.club.equalsIgnoreCase(EQUIPIMPORTANT2))
+			puntuacioNoticia += PUNTUACIOEQUIPIMPORTANT;	
+			
+		return puntuacioNoticia;
+	}
+	
+	@Override
+	public String toString() {
+		return "Noticia de Basket: " + "\nTitular = " + super.titular + "\nText = " + super.text
+				+  ".\nCompetició = " + this.competicio + "\nClub = " + this.club + ".";
+	}
+
+}
